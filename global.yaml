@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+  - yum:
+      name: wget
+      state: present
+  - yum:
+     name: vim
+     state: present
+

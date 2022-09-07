@@ -1,0 +1,13 @@
+--- 
+- name: playgood
+  hosts: all
+  tasks:
+  - name: installing package
+    yum:
+      name: "{{ pkg1 }}"
+      state: present
+  - name: starting the service
+    service:
+      name: "{{ srv1 }}"
+      state: started
+      enabled: yes

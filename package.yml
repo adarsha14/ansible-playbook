@@ -1,0 +1,13 @@
+---
+- name: gameplay
+  hosts: all
+  tasks:
+  - name: creating user
+    user:
+      name: vigy
+      state: present
+    tags: creating for global
+  - name: installing package
+    yum:
+      name: httpd
+      state: present

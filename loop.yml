@@ -1,0 +1,10 @@
+---
+- name: sample
+  hosts: web
+  tasks:
+    - name: add list of users
+      user: name='{{item}}' state=present
+      with_items:
+        - mobile
+        - red
+        - blue

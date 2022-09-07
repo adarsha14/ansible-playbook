@@ -1,0 +1,7 @@
+---
+- host: web
+  remote_user: ansadmin
+  become: true
+  become_user: root
+  become_method: sudo
+  becom_ask_pass: false

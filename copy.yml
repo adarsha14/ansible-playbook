@@ -1,0 +1,15 @@
+---
+- name: joyplay
+  hosts: web
+  tasks:
+  - name: create user
+    user:
+      name: vignesh
+      state: present
+- name: gameplay
+  hosts: all
+  tasks:
+  - name: copy of file
+    copy:
+      src: /etc/hosts
+      dest: /tmp

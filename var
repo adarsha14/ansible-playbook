@@ -1,0 +1,4 @@
+pkg1: httpd
+srv1: httpd
+user1: adarsh
+file1: /f1

@@ -1,0 +1,14 @@
+---
+- name: sample
+  hosts: web
+  tasks:
+    - name: add list of users
+      yum:
+        name: "{{item}}"
+        state: latest
+      loop:
+        - vim
+        - docker
+        - tree
+        - wget
+

@@ -1,0 +1,15 @@
+---
+- name: Multu functionality
+  hosts: web
+  tasks:
+    - name: Adding line to existing file
+      lineinfile:
+        path: /etc/motd
+        line: "welcome to the {{ ansible_facts.distribution }}"
+        state: present
+    - name: getting info reagarding any file
+      stat:
+        path: /etc/passwd
+      register: results
+    - name: display the stat result
+      debug: var=results

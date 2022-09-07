@@ -1,0 +1,19 @@
+---
+- name: demo task
+  hosts: all
+  tasks:
+  - name: uninstalling the package
+    yum:
+      name: vsftpd
+      state: absent
+  - name: installing the package
+    yum:
+      name: vsftpd
+      state: present
+    notify:
+    - restarting the service
+  handlers:
+  - name: restarting the service
+    service:
+      name: vsftpd
+      state: restarted
