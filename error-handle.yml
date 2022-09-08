@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - block:
+        - name: finding files in pwd
+          command: "ls /root/tomcat9"
+          register: tomcat9_out
+      rescue:
+          - debug:
+              msg: "the given path is /root/tomcat8 is not valid"
+      always:
+          - debug:
+              msg: "always enjoy the day"

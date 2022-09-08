@@ -1,0 +1,34 @@
+---
+- name: to demostrate use of tags
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: operation using tag1
+      debug:
+        msg:
+          - "hi, this is debug message 1"
+      tags:
+        - first
+    - name: operation using tag2
+      debug:
+        msg:
+          - "hi,5 this is debug message 2"
+      tags:
+        - second
+        - comman
+    - name: operation using tag3
+      debug:
+        msg:
+          - "hi, this is debug message 3"
+      tags:
+        - third
+    - name: operation using tag4
+      debug:
+        msg:
+          - "hi, this is debug message 4"
+      tags:
+        - fourth
+
+#ansible-playbook tags.yml --skip-tags=second
+# ansible-playbook tags.yml -t first
+# ansible-playbook tags.yml -t fourth -t first

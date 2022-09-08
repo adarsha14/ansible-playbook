@@ -1,0 +1,17 @@
+---
+- name: error handling
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    
+    - command: "ls /root/tomacat7"
+      register: tomcat7_out
+    - debug: var=tomcat7_out
+
+    - command: "ls /root/tomcat8"
+      register: tomcat_out
+    - debug: var=tomcat8_out
+
+    - command: "ls /root/tomcat9"
+      register: tomacat9_out
+    - debug: var=tomcat9_out
