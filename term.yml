@@ -1,0 +1,10 @@
+---
+- name: localhost
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Launching ec2 instance
+      ec2:
+        region: us-east-1
+        state: absent
+        instance_ids: i-06374e00c9c82d38d

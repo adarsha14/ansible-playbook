@@ -1,0 +1,22 @@
+---
+- name: localhost
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Launching ec2 instance
+    ec2:
+      instance_type: t2.micro
+      key_name: awskey2
+      image: ami-05fa00d4c63e32376
+      region: us-east-1
+      group: launch-wizard-4
+      count: 1
+      vpc_subnet_id: subnet-0036f0742e7d8ffa2
+      volumes:
+        - device_name: /dev/xvda
+          volume_type: gp2
+          volume_size: 8
+      wait: yes
+      assign_public_ip: yes
+      count_tag:
+        Name: yyyyyyyyyy
